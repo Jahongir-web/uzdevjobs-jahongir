@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>E'lonlar sayti</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-body">
+
+  <header class="site-header row">
+    <div class="container d-flex justify-content-between p-2">
+      <a class="logo-link" href="index.html">
+        <h2 class="header-site-heading"><span class="text-danger">Uz</span><span class="text-success">Dev</span><span class="text-info">Jobs</span></h2>
+      </a>
+
+      <div class="btn-box">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+          E'lon qo'shish
+        </button>
+        <button class="btn btn-dark theme-btn" type="button">Tungi rejim</button>
+      </div>
+    </div>
+
+
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="d-flex mt-5 mb-5 search-job-box">
+        <form class="js-search-form mb-3 w-100 mt-3 d-flex flex-wrap justify-content-between" action="https:echo.htmlacademy.ru" method="POST">
+          <input class="js-search-tech mb-3 p-2 search-input-group" type="text" placeholder="texnologiyalar" name="tech">
+          <select class="js-search-location mb-3 p-2 search-input-group">
+            <option selected disabled>Hududlar</option>
+            <option value="tashkent">Tashkent</option>
+            <option value="andijan">Andijan</option>
+            <option value="bukhara">Bukhara</option>
+            <option value="fergana">Fergana</option>
+            <option value="jizzakh">Jizzakh</option>
+            <option value="karakalpakstan">Karakalpakstan</option>
+            <option value="kashkadarya">Kashkadarya</option>
+            <option value="khorezm">Khorezm</option>
+            <option value="namangan">Namangan</option>
+            <option value="navoiy">Navoiy</option>
+            <option value="samarkand">Samarkand</option>
+            <option value="surkhandarya">Surkhandarya</option>
+            <option value="syrdarya">Syrdarya</option>
+          </select>
+
+          <select class="js-search-time mb-3 p-2 search-input-group">
+            <option selected="" disabled="">Ish vaqti</option>
+            <option value="full">To'liq</option>
+            <option value="part">Qisman</option>
+            <option value="flexible">Moslashuvchan</option>
+          </select>
+
+          <input class="js-search-pay mb-3 p-2 search-input-group" type="number" placeholder="minimum pay" name="min-pay">
+          <button class="btn btn-info search-btn mb-3 p-2 flex-shrink-0" type="submit">Search</button>
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="mt-3">
+      <ul class="jobs-list list-unstyled d-flex flex-wrap justify-content-center">
+
+
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-more">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Quyidagi formani to'ldiring.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form action="https://echo.htmlacademy.ru" class="job-form" id="jobs-form-id" method="POST">
+            <input type="text" class="heading-input input-group mb-2 bg-transparent" aria-label="heading jobs" placeholder="Sarlavha" name="heading" required>
+            <input type="text" class="company-name-input input-group mb-2 bg-transparent" aria-label="company name" name="company-name" placeholder="Kompaniya nomi" required>
+            <input type="text" class="technology-input input-group mb-2 bg-transparent" name="technology" aria-label="technology" placeholder="Texnologiyalar ( , bilan ajratilgan holda)" required>
+            <input type="text" class="telegram-input input-group mb-2 bg-transparent" aria-label="telegram adress" name="telegram" placeholder="Telegram" required>
+            <input type="tel" class="tel-input input-group mb-2 bg-transparent" name="phone" aria-label="telephone" placeholder="Telefon raqami" required>
+            <select class="zone-select input-group mb-2 bg-transparent" name="zone" required>
+              <option value="" selected disabled>hudud</option>
+              <option value="Toshkent">Toshkent</option>
+              <option value="Respublika">Butun Respublika</option>
+            </select>
+            <input type="text" class="answerable-input input-group mb-2 bg-transparent" name="answerable" aria-label="answerable" placeholder="Mas'ul" required>
+            <select class="work-time-select input-group mb-2 bg-transparent" name="worktime" aria-label="work time" id="" required>
+              <option value="" selected disabled>Ish vaqti</option>
+              <option value="to'liq">To'liq bandlik</option>
+              <option value="qisman">Qisman bandlik</option>
+            </select>
+            <input type="text" class="solary-input input-group mb-2 bg-transparent" name="solary" aria-label="solary" placeholder="Minimal maosh" required>
+
+            <textarea class="textarea-form resize bg-transparent" resize name="more" id="" cols="47" rows="5">Batafsil
+            </textarea>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary added-btn" form="jobs-form-id">Qo'shish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <template class="template-job">
+    <li class="jobs-item card-body">
+      <h4 class="heading-job">Xodim kerak</h4>
+      <h4 class="company-name-job">Najot ta'lim</h4>
+      <p class="technalogy-job">HTML,CSS,JS,REACTJS</p>
+      <a href="" class="telegram-link-job d-block text-reset" target="_blank">@jahongir_mh</a>
+      <a href="tel:+998975008749" class="phone-job d-block text-reset">+99897 500 87 49</a>
+      <span class="zone-job d-block">Toshkent</span>
+      <span class="answerable-job d-block">Jahongir</span>
+      <span class="work-time-job d-block">To'liq bandlik</span>
+      <span class="solary-job d-block">500</span>
+    </li>
+  </template>
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
