@@ -20,6 +20,16 @@
   color: #fff;
 }
 
+.body-dark .modal-more .input-group option {
+  background-color: #222;
+}
+
+.input-group {
+  border: 0;
+  border-bottom: 2px solid rgb(201, 110, 236);
+}
+
+
 .theme-btn{
   width: 135px;
 }
